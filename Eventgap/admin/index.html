@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+<link type="text/css" rel="stylesheet" media="all" href="css/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" media="all" href="css/grid.css" />
+<link type="text/css" rel="stylesheet" media="all" href="css/visualize.css" />
+<title>Letmon - Administrador</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/excanvas.js"></script>
+<script type="text/javascript" src="js/visualize.jQuery.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+<div id="header">
+  <div class="header-top tr">
+    <p>Hello <strong>John Doe</strong> | You have <a href="#" id="opener" class="strong">1 new message</a> | <a href="#">Settings</a> | <a href="#">Logout</a></p>
+    <!-- start dialogue box -->
+    <div id="dialog" title="Messages">
+      <div class="notification info"> <span class="strong">INFORMATION!</span> You have 1 new message. </div>
+      
+      <!-- start new message -->
+      <div class="message new">
+        <h4>Welcome...<small class="fr">28rd April 2010 from <a href="#">MaestroX</a></small></h4>
+        <p> This is an example of the dialog box. It's powered by jQuery UI so there's tons of options and it's flexible. Checkout the documentation for more information.</p>
+      </div>
+      <!-- end new message --> 
+      <!-- start old message -->
+      <div class="message">
+        <h4>Old Message<small class="fr">28rd April 2010 from <a href="#">System</a></small></h4>
+        <p> Welcome to your shiny new admin panel. Take a look around!</p>
+      </div>
+      <!-- end old message --> 
+      <!-- start write new message -->
+      <form method="post" action="#">
+        <h3>New Message</h3>
+        <fieldset>
+          <textarea rows="5" cols="55" name="textfield" class="textarea" style="width:97%"></textarea>
+        </fieldset>
+        <fieldset>
+          <input type="submit" value="Send" class="button medium fr" />
+        </fieldset>
+      </form>
+      <!-- end write new message --> 
+    </div>
+    
+    <!-- end dialogue box --> 
+  </div>
+  <div class="header-middle"> 
+    <!-- Start Nav -->
+    <ul id="nav" class="fr ">
+      <!-- Nav - Start Help -->
+      <li class="help"><a class="help" href="#">Help</a>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Forums</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </li>
+      <!-- Nav - End Help --> 
+      <!-- Nav - Start Settings -->
+      <li class="settings"><a class="settings" href="#">Settings</a>
+        <ul>
+          <li><a href="#">System Settings</a></li>
+          <li><a href="#">Server Setup</a></li>
+        </ul>
+      </li>
+      <!-- Nav - End Settings --> 
+      <!-- Nav - Start Users -->
+      <li class="users"><a class="users" href="#">Users</a>
+        <ul>
+          <li><a href="#">User Manager</a></li>
+          <li><a href="#">Manage Users  &raquo;</a>
+            <ul>
+              <li><a href="#">Add User</a></li>
+              <li><a href="#">Edit User</a></li>
+              <li><a href="#">Delete User</a></li>
+            </ul>
+          </li>
+          <li><a href="#">User Reports</a></li>
+          <li><a href="#">Usergoups</a></li>
+        </ul>
+      </li>
+      <!-- Nav - End Users --> 
+      <!-- Nav - Start Content -->
+      <li class="content"><a class="content" href="#">Content</a>
+        <ul>
+          <li><a href="#">Manage Pages  &raquo;</a>
+            <ul>
+              <li><a href="#">Add Page  &raquo;</a>
+                <ul>
+                  <li><a href="#">HTML Page</a></li>
+                  <li><a href="#">Widget Page</a></li>
+                  <li><a href="#">Custom Page</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Edit Page</a></li>
+              <li><a href="#">Delete Page</a> </li>
+            </ul>
+          </li>
+          <li><a href="#">Page Statstics</a></li>
+          <li><a href="#">Page Categories</a></li>
+          <li><a href="#">Page Tags</a></li>
+        </ul>
+      </li>
+      <!-- Nav - End Content --> 
+      <!-- Nav - Start Help -->
+      <li class="dashboard"><a class="dashboard" href="#">Dashboard</a></li>
+      <!-- Nav - End Dashboard -->
+    </ul>
+    <!-- End Nav --> 
+    <!-- Start Logo --> 
+    <img id="logo" src="img/logo.png" alt="Admin Theme" /> 
+    <!-- End Logo --> 
+    <br class="cl" />
+  </div>
+  <div class="header-bottom"> 
+    <!-- Start Breadcrumbs -->
+    <ul id="breadcrumbs">
+      <li><a href="#">Base</a> &raquo;</li>
+      <li><a href="#">Level One</a> &raquo;</li>
+      <li><a href="#">Level Two</a></li>
+    </ul>
+    <!-- End Breadcrumbs --> 
+  </div>
+</div>
+<div id="page-wrapper">
+  <div class="page"> 
+    <!-- Start Sidebar -->
+    <div id="sidebar"> 
+      
+      <!-- Start Live Search  -->
+      <form class="searchform" action="#">
+        <input id="livesearch" type="text" onblur="if (this.value == '') {this.value = 'Live Search...';}" onfocus="if (this.value == 'Live Search...') {this.value = '';}" value="Live Search..." class="searchfield" />
+        <input type="button" value="Go" class="searchbutton" />
+      </form>
+      <!-- End Live Search  --> 
+      <!-- Start Content Nav  --> 
+      <span class="ul-header"><a id="toggle-catnav" href="#" class="toggle visible">Content</a></span>
+      <ul id="catnav">
+        <li><a class="icn_manage_cat" href="#">Manage Categories</a></li>
+        <li><a class="icn_add_cat" href="#">Add Categories</a></li>
+        <li><a class="icn_edit_cat" href="#">Edit Categories</a></li>
+        <li><a class="icn_delete_cat" href="#">Delete Categories</a></li>
+      </ul>
+          <span class="ul-header"><a id="toggle-invnav" href="#" class="toggle visible">Inventory</a></span>
+      <ul id="invnav">
+        <li><a class="icn_manage_inv" href="#">Manage Inventory</a></li>
+        <li><a class="icn_add_inv" href="#">Add Inventory</a></li>
+        <li><a class="icn_edit_inv" href="#">Edit Inventory</a></li>
+        <li><a class="icn_delete_inv" href="#">Delete Inventory</a></li>
+      </ul>
+      <!-- End Content Nav  --> 
+      <!-- Start Comments Nav  --> 
+      <span class="ul-header"><a id="toggle-commentsnav" href="#" class="toggle visible">Comments</a></span>
+      <ul id="commentsnav">
+        <li><a class="icn_manage_comments" href="#">Manage Comments</a></li>
+        <li><a class="icn_add_comments" href="#">Add Comments</a></li>
+        <li><a class="icn_edit_comments" href="#">Edit Comments</a></li>
+        <li><a class="icn_delete_comments" href="#">Delete Comments</a></li>
+      </ul>
+      <!-- End Comments Nav  --> 
+      <!-- Start Users Nav  --> 
+      <span class="ul-header"><a id="toggle-userssnav" href="#" class="toggle visible">Users</a></span>
+      <ul id="userssnav">
+        <li><a class="icn_manage_users" href="#">Manage Users</a></li>
+        <li><a class="icn_add_users" href="#">Add Users</a></li>
+        <li><a class="icn_edit_users" href="#">Edit Users</a></li>
+        <li><a class="icn_delete_users" href="#">Delete Users</a></li>
+      </ul>
+      <!-- End Users Nav  --> 
+      <!-- Start Gallery Nav  --> 
+      <span class="ul-header"><a id="toggle-imagesnav" href="#" class="toggle visible">Gallery</a></span>
+      <ul id="imagesnav">
+        <li><a class="icn_manage_image" href="#">Manage Images</a></li>
+        <li><a class="icn_add_image" href="#">Add Images</a></li>
+        <li><a class="icn_edit_image" href="#">Edit Images</a></li>
+        <li><a class="icn_delete_image" href="#">Delete Images</a></li>
+      </ul>
+      <!-- End Gallery Nav  --> 
+      <!-- Start Statistics Area  --> 
+      <span class="ul-header">Statistics</span>
+      <ul>
+        <li>Pages: 183</li>
+        <li>Comments: 432</li>
+        <li>Users: 1094</li>
+        <!-- End Statistics Area  -->
+      </ul>
+    </div>
+    <!-- End Sidebar  --> 
+    
+    <!-- Star Page Content  -->
+    <div id="page-content"> 
+      
+      <!-- Start Page Header -->
+      <div id="page-header">
+        <h1>Dashboard</h1>
+      </div>
+      <!-- End Page Header --> 
+      
+      <!-- Start Grid -->
+      <div class="container_12"> 
+        
+        <!-- Start Web Stats -->
+        <div class="grid_12">
+          <div class="box-header"> <span class="fr"><a href="#">Week</a> | <a href="#">Month</a></span> Web Stats </div>
+          <div class="box stats">
+            <table cellspacing="0" cellpadding="0" width="100%" id="stats" style="display: none;">
+              <thead>
+                <tr>
+                  <td>&nbsp;</td>
+                  <th scope="col">1st</th>
+                  <th scope="col">2nd</th>
+                  <th scope="col">3rd</th>
+                  <th scope="col">4th</th>
+                  <th scope="col">5th</th>
+                  <th scope="col">6th</th>
+                  <th scope="col">7th</th>
+                  <th scope="col">8th</th>
+                  <th scope="col">9th</th>
+                  <th scope="col">10th</th>
+                  <th scope="col">11th</th>
+                  <th scope="col">12th</th>
+                  <th scope="col">13th</th>
+                  <th scope="col">14th</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: rgb(251, 251, 251);">
+                  <th scope="row">New Pages</th>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>3</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>4</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th scope="row">New Comments</th>
+                  <td>10</td>
+                  <td>15</td>
+                  <td>14</td>
+                  <td>16</td>
+                  <td>20</td>
+                  <td>24</td>
+                  <td>20</td>
+                  <td>25</td>
+                  <td>28</td>
+                  <td>26</td>
+                  <td>30</td>
+                  <td>28</td>
+                  <td>30</td>
+                  <td>32</td>
+                </tr>
+                <tr>
+                  <th scope="row">New Users</th>
+                  <td>5</td>
+                  <td>8</td>
+                  <td>9</td>
+                  <td>5</td>
+                  <td>10</td>
+                  <td>14</td>
+                  <td>12</td>
+                  <td>10</td>
+                  <td>8</td>
+                  <td>12</td>
+                  <td>14</td>
+                  <td>19</td>
+                  <td>22</td>
+                  <td>24</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+          </div>
+        </div>
+        <!-- End Web Stats --> 
+        
+        <!-- Start Table -->
+        <div class="grid_8">
+          <div class="box-header"> Table Example </div>
+          <div class="box table">
+            <table cellspacing="0">
+              <thead>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td>Name</td>
+                  <td>Email</td>
+                  <td>Joined</td>
+                  <td>Usergroup</td>
+                  <td>Options</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+                                <tr>
+                  <td class="tc"><input type="checkbox" value="" class="checkbox" /></td>
+                  <td> John </td>
+                  <td>lorm@ipsum.com </td>
+                  <td>9/5/2010</td>
+                  <td> Member </td>
+                  <td class="tc"><a href="#" title="Edit User"><img src="img/icons/small/user_edit.png" alt="edit user" border="0" /></a> <a href="#" title="Delete User"><img src="img/icons/small/user_delete.png" alt="delete user" border="0" /></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- End Table --> 
+        <!-- Start Formatting -->
+        <div class="grid_4">
+          <div class="box-header"> Formatting </div>
+          <div class="box">
+            <h2>Headline</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <h3>Headline</h3>
+            <ul>
+              <li>Cupidatat non</li>
+              <li>Officia deserunt mollit</li>
+              <li>Velit esse cillum</li>
+            </ul>
+            <h4>Headline</h4>
+            <ol>
+              <li>Ullamco laboris</li>
+              <li>Pcupidatat non proident</li>
+              <li>Duis aute irure dolor</li>
+            </ol>
+          </div>
+        </div>
+        <br class="cl" />
+        <!-- End Formatting --> 
+        <!-- Start Forms -->
+        <div class="grid_7">
+          <div class="box-header"> Forms </div>
+          <div class="box">
+            <form method="post" action="#">
+              <div class="row">
+                <label>Input label:</label>
+                <input type="text" />
+              </div>
+              <div class="row">
+                <label>Error example:</label>
+                <input type="text" class="error" />
+              </div>
+              <div class="row">
+                <label>Select label:</label>
+                <select>
+                  <optgroup label="Group 1">
+                  <option>Option one</option>
+                  <option>Option two</option>
+                  <option>Option three</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="row">
+                <label>Checkbox buttons:</label>
+                <input type="checkbox" checked="checked" />
+                <label class="checkbox">This</label>
+                <input type="checkbox" />
+                <label class="checkbox">That</label>
+                <input type="checkbox" />
+                <label class="checkbox">The Other</label>
+                <input type="checkbox" />
+                <label class="checkbox">Them</label>
+                <br class="cl" />
+              </div>
+              <div class="row">
+                <label>Radio buttons:</label>
+                <input name="demoradio" type="radio" class="radio" checked="checked" />
+                <label class="radio">Yes</label>
+                <input name="demoradio" type="radio" class="radio" />
+                <label class="radio">No</label>
+                <br class="cl" />
+              </div>
+              <div class="row">
+                <label>Text area:</label>
+                <textarea name="text area" rows="6" cols="34"></textarea>
+              </div>
+              <div class="row">
+                <label>Big Button:</label>
+                <input type="submit" value="Large Button" class="button" />
+              </div>
+              <div class="row">
+                <label>Smaller Buttons:</label>
+                <input type="submit" value="Medium Button" class="button medium" />
+                <input type="submit" value="Small Button" class="button small" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Start Forms --> 
+        <!-- Start Notifcations -->
+        <div class="grid_5">
+          <div class="box-header"> Notifications </div>
+          <div class="box">
+            <div class="notification success"> <span class="strong">SUCCESS!</span> This is a success message. </div>
+            <div class="notification error"> <span class="strong">ERROR!</span> This is a error message. </div>
+            <div class="notification warning"> <span class="strong">WARNING!</span> This is a warning message. </div>
+            <div class="notification info"> <span class="strong">INFORMATION!</span> This is a informative message. </div>
+            <div class="notification tip"> <span class="strong">TIP:</span> This is a tip message. </div>
+          </div>
+        </div>
+        <br class="cl" />
+        <!-- End Notifcations --> 
+                <!-- Start Layout Example -->
+        <div class="grid_12">
+          <div class="box-header"> Grids within grids </div>
+          <div class="box">
+            <p>The fluid grid system is flexible enough for grids to be nested inside grids of grids.</p>
+            <div class="container_12">
+              <div class="grid_4">
+                <div class="box-header"> Column One </div>
+                <div class="box">
+                  <div class="container_12">
+                    <div class="grid_6">
+                      <div class="box-header"> Inner Column </div>
+                      <div class="box"> This is the content of the inner column. </div>
+                    </div>
+                    <div class="grid_6">
+                      <div class="box-header"> Inner Column </div>
+                      <div class="box"> This is the content of the inner column. </div>
+                    </div>
+                    <br class="cl" />
+                  </div>
+                </div>
+              </div>
+              <div class="grid_4">
+                <div class="box-header"> Column Two </div>
+                <div class="box"> This is the content for column two. </div>
+              </div>
+              <div class="grid_4">
+                <div class="box-header"> Column Three </div>
+                <div class="box"> This is the content for column three. </div>
+              </div>
+              <br class="cl" />
+            </div>
+          </div>
+        </div>
+        <br class="cl" />
+        <!-- End Layout Example --> 
+        
+        <!-- End Grid --> 
+      </div>
+      <!-- End Page Wrapper --> 
+    </div>
+    <!-- End Page Content  --> 
+  </div>
+</div>
+<!-- Start Footer -->
+<div class="footer"><a href="http://www.letmon.com/">Created By Letmon</a></div>
+<!-- End Footer -->
+
+</body>
+</html>

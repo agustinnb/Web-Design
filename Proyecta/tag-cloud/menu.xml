@@ -1,0 +1,30 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header ("Expires: Thu, 27 Mar 1980 23:59:00 GMT"); //la pagina expira en una fecha pasada
+header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); //ultima actualizacion ahora cuando la cargamos
+header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
+header ("Pragma: no-cache");
+?>
+<items><item link="../index.php?s=(325)asdsad">
+		<![CDATA[ <l>#asdsad</l>]]> 
+	</item><item link="../index.php?s=(325)asdasqeas">
+		<![CDATA[ <l>#asdasqeas</l>]]> 
+	</item><item link="../index.php?s=(325)lalala">
+		<![CDATA[ <l>#lalala</l>]]> 
+	</item><item link="../index.php?s=(325)tururu">
+		<![CDATA[ <h>#tururu</h>]]> 
+	</item><item link="../index.php?s=(325)asd">
+		<![CDATA[ <l>#asd</l>]]> 
+	</item><item link="../index.php?s=(325)llalalalalala">
+		<![CDATA[ <l>#llalalalalala</l>]]> 
+	</item><item link="../index.php?s=(325)tururu24">
+		<![CDATA[ <l>#tururu24</l>]]> 
+	</item><item link="../index.php?s=(325)ads">
+		<![CDATA[ <l>#ads</l>]]> 
+	</item><item link="../index.php?s=(325)wqe">
+		<![CDATA[ <l>#wqe</l>]]> 
+	</item><item link="../index.php?s=(325)sdawq">
+		<![CDATA[ <l>#sdawq</l>]]> 
+	</item><item link="../index.php?s=(325)dsaads">
+		<![CDATA[ <l>#dsaads</l>]]> 
+	</item></items>

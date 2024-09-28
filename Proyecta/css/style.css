@@ -1,0 +1,17 @@
+div#ideascon {
+    width: 50px;
+    height: 140px;
+	margin-left: 10px;
+    
+}
+div.mousescroll {
+    overflow: hidden;
+}
+div.mousescroll:hover {
+    overflow-y: scroll;
+}
+ul {
+    list-style-type: none;
+}
+.slimScrollDiv { margin:10px; order-radius: 2px; }
+

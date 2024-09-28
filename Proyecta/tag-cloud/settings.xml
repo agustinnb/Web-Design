@@ -1,0 +1,70 @@
+<settings>
+  <General_Properties>
+    <componentWidth value="411"/>
+    <componentHeight value="290"/>
+    <assets value="menu.xml"/>
+    <showAbout value="true"/>
+  </General_Properties>
+  <Tag_Properties>
+    <aspect value="sphere"/>
+    <offsetX value="188"/>
+    <offsetY value="138"/>
+    <radius value="193"/>
+    <perspective value="316"/>
+    <rollOutSpeed value="2"/>
+    <speed value="3"/>
+    <stopingSpeed value="0.1"/>
+    <rollOutAngle value="50"/>
+    <picWidth value="35"/>
+    <picHeight value="0"/>
+    <picPosition value="right"/>
+    <picDistance value="0"/>
+  </Tag_Properties>
+  <Text_Properties>
+    <width value="0"/>
+    <backgroundColor value="0xffffff"/>
+    <bgAlpha value="0.2"/>
+    <cornerRadius value="0"/>
+    <borderWidth value="1"/>
+    <borderColor value="0xffffff"/>
+    <borderAlpha value="1"/>
+    <paddingLeft value="5"/>
+    <paddingRight value="5"/>
+    <paddingTop value="5"/>
+    <paddingBottom value="5"/>
+    <embedFonts value="true"/>
+    <style value="assets/css/style.css"/>
+  </Text_Properties>
+  <Over_Properties>
+    <overBorderWidth value="2"/>
+    <overBorderColor value="0xffffff"/>
+    <overBorderAlpha value="1"/>
+  </Over_Properties>
+  <Background_Properties>
+    <fillType value="radial"/>
+    <backgroundImage value="assets/wood.jpg"/>
+    <backgroundFitting value="repeat"/>
+    <backgroundColor1 value="0xffffff"/>
+    <backgroundColor2 value="0xffffff"/>
+    <backgroundAlpha value="1"/>
+    <bgCornerRadius value="18"/>
+    <gradientRotation value="30"/>
+    <gradientRatio value="40"/>
+    <gradientPosX value="0"/>
+    <gradientPosY value="0"/>
+    <useShade value="false"/>
+    <shadeColor value=""/>
+    <shadeAlpha value="0"/>
+    <shadeRatio value="0"/>
+    <shadeWidth value="0"/>
+    <shadeHeight value="0"/>
+  </Background_Properties>
+  <Shade_Properties>
+    <useShade value="false"/>
+    <shadeColor value="0x990000"/>
+    <shadeAlpha value="1"/>
+    <shadeRatio value="40"/>
+    <shadeWidth value="0"/>
+    <shadeHeight value="0"/>
+  </Shade_Properties>
+</settings>
